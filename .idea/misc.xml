@@ -3,11 +3,13 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/springMVc-demo1" />
+    <file type="web" url="file://$PROJECT_DIR$/springMVC-demo2" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/springMVc-demo1/pom.xml" />
+        <option value="$PROJECT_DIR$/springMVC-demo2/pom.xml" />
       </list>
     </option>
   </component>
