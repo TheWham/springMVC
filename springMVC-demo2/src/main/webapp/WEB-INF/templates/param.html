@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>RequestParamTest</title>
+</head>
+<body>
+    <a th:href="@{/testServletRequestParamAPI(username='xcsnb', password=12345)}">test Servlet RequestAPI</a><br>
+    <a th:href="@{/testRequestParamInSpringMVC(username='xcsnb', password=123)}">test Get Request Param in springMVC</a><br>
+
+    <form th:action="@{/testGetFormParam}" method="post">
+      <label for="username">username: </label>
+      <input type="text" name="username" id="username"><br>
+      <label for="password">password:</label>
+      <input type="password" name="password" id="password"><br>
+      <input type="checkbox" name="hobby" value="a">
+      <input type="checkbox" name="hobby" value="b">
+      <input type="checkbox" name="hobby" value="c"><br>
+      <input type="submit" value="input form to testParam">
+    </form><br>
+</body>
+</html>

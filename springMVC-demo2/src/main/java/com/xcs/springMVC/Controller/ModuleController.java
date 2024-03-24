@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/hello")
 public class ModuleController {
     @RequestMapping("/testModuleRequest")
-    public String testModuleRequest(){
+    public String testModuleRequest()
+    {
         return "success";
     }
 }

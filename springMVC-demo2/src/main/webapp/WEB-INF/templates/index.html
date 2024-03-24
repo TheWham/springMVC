@@ -10,9 +10,12 @@
     <a th:href="@{/test}">test</a><br>
     <a th:href="@{/testMultiMapping}">multi-mapping-requesting</a><br>
     <a th:href="@{/testGetMapping}">testGetMapping</a><br>
+    <a th:href="@{/testParamInRequest(username='xcs', password=123456)}">testParamInRequestMapping</a><br>
+    <a th:href="@{/testAnt/a1a}">testAntPath</a><br>
+    <a th:href="@{/test/123/xcsnb}">测试占位符</a><br>
 
     <form th:action="@{/test}" method="post">
-        <input type="submit" value="testPostMapping">
+        <input type="submit" value="testPostMapping"1>
     </form>
 </body>
 </html>
