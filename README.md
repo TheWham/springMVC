@@ -174,3 +174,20 @@ springMVC-learning
     Required String parameter 'xxx' is not present; 若设置为false, 则当前请求不是必须传输value所指定的请求参数, 若没有传输, 则注解
     所标识的参数值为null
     3. defaultValue: 不管required属性值为true或false, 当value所指定的请求参数没有传输或传输的值为''时,则使用默认值作为形式参数
+
+* ### Post请求出现乱码问题解决方案
+---
+```xml
+    <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+        <param-name>encoding</param-name>
+        <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+        <param-name>forceResponseEncoding</param-name>
+        <param-value>true</param-value>
+    </init-param>
+    </filter>
+```
