@@ -11,9 +11,13 @@ import java.util.Map;
 
 @Controller
 public class ScopeController {
-    @RequestMapping("/")
-    public String testIndex(){
-        return "index";
+//    @RequestMapping("/")
+//    public String testIndex(){
+//        return "index";
+//    }
+    @RequestMapping("/testForwardAndRedirect")
+    public String testForwardAndRedirect(){
+        return "success";
     }
     @RequestMapping("/testServletApIScope")
     public String testServletAPIScope(HttpServletRequest servletRequest){
