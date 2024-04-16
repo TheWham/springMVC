@@ -11,7 +11,9 @@
         <module name="springMVC-jsp" />
         <module name="springMVC-demo3" />
         <module name="springMVC-rest" />
+        <module name="springMVC-demo4" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="17" />
   </component>
 </project>

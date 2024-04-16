@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" th:src="@{static/js/vue.js}"></script>
+    <script type="text/javascript" th:src="@{static/js/axios.min.js}"></script>
+</head>
+<body>
+  <h1>hello world</h1>
+    <a th:href="@{/toRequestForm}">testRequestBody</a> <br>
+    <a th:href="@{/testResponseBody}">testResponseBody</a> <br>
+    <a th:href="@{/testRequestEntity}">testRequestEntity</a><br>
+    <a th:href="@{/testResponseObject}">testResponseObject</a><br>
+    <a th:href="@{/fileLoad}">fileLoad</a><br>
+  <div id="app">
+      <a th:href="@{/testAjax}" @click="testAjax">testAjax</a>
+  </div>
+  <script type="text/javascript">
+      var vue = new Vue({
+          el:"#app",
+          methods:{
+              testAjax:function (event){
+                  axios({
+                      method: "post",
+                      url:event.target.href,
+                      params:{
+                          username:'许迟帅',
+                          password:'123'
+                      }
+                  }).then(function (response){
+                      alert(response.data)
+                  });
+                  event.preventDefault();
+              }
+          }
+      });
+  </script>
+</body>
+
+</html>
