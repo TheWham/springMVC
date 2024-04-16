@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>展示数据库内容</title>
+</head>
+<body>
+<style>
+    #myTable{
+        border-collapse: collapse;
+        border: 2px solid rgb(140 140 140);
+        font-family: sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 4px;
+    }
+</style>
+<table id="myTable">
+    <tr>
+        <th>id    </th>
+        <th>lastName</th>
+        <th>email</th>
+        <th>gender</th>
+        <th>option(<a th:href="@{/testRest/add}">add</a>)</th>
+    </tr>
+    <tr th:each="employee : ${employeeList}">
+        <td th:text="${employee.id}"/>
+        <td th:text="${employee.lastname}"/>
+        <td th:text="${employee.email}"/>
+        <td th:text="${employee.gender}"/>
+        <td><a @click="deleteEmployee" th:href="@{/testRest/} + ${employee.id}">delete</a></td>
+        <td><a th:href="@{/testRest/} + ${employee.id}">update</a></td>
+    </tr>
+</table>
+<form th:action="@{/testRest}" id="delete_from" method="post">
+    <input type="hidden" name="_method" value="delete">
+</form>
+<script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
+<script type="text/javascript">
+    var vue = new Vue({
+        el:"#myTable",
+        methods:{
+            //event表示当前事件
+            deleteEmployee:function (event) {
+                //通过id获取表单标签
+                var delete_form = document.getElementById("delete_from");
+                //将触发事件的超链接的href属性为表单的action属性赋值
+                delete_form.action = event.target.href;
+                //提交表单
+                delete_form.submit();
+                //阻止超链接的默认跳转行为
+                event.preventDefault();
+            }
+        }
+    });
+</script>
+</body>
+
+</html>
