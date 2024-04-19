@@ -13,7 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.function.ServerRequest;
 
 import java.io.*;
 import java.util.UUID;
@@ -74,6 +73,7 @@ public class RequestAndResponseMessageController {
         ServletContext servletContext = session.getServletContext();
         String photo1 = servletContext.getRealPath("photo");
         File file = new File(photo1);
+
         if (!file.exists()){
             file.mkdir();
         }
