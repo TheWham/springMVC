@@ -31,7 +31,19 @@
     <mvc:view-controller path="/toRequestForm" view-name="formRequest"/>
     <mvc:view-controller path="/fileLoad" view-name="fileDownLoad"/>
     <mvc:default-servlet-handler/>
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="defaultCharset" value="UTF-8"/>
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/html</value>
+                        <value>application/json</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
     <!--必须通过文件解析器的解析才能将文件转换为MultipartFile对象-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
 </beans>
